@@ -1,0 +1,298 @@
+:root{
+    --lightBG : rgb(59, 59, 59);
+    --darkBg : rgb(31, 31, 31);
+    --secondary : rgb(218, 218, 218);
+    --secondary2 : red;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    background-color: var(--lightBG);
+    overflow: hidden;
+    position: relative;
+}
+::-webkit-scrollbar{
+    width: 3px;
+    background-color: var(--darkBg);
+}
+::-webkit-scrollbar-thumb{
+    width: 3px;
+    background-color: var(--secondary2);
+}
+nav{
+    width: 100vw;
+    height: 60px;
+    background-color: var(--darkBg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav .logo{
+    padding: 0px 20px;
+    font-size: 25px;
+}
+nav .logo span{
+    color: var(--secondary2);
+}
+nav .logo span span{
+    color: var(--secondary);
+}
+nav ul{
+    width: 300px;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0px;
+}
+nav ul li{
+    list-style: none;
+    color: var(--secondary2);
+    font-size: 18px;
+    cursor: pointer;
+}
+nav ul li a{
+    text-decoration: none;
+    color: var(--secondary2);
+    font-size: 18px;
+    cursor: pointer;
+}
+nav ul li i{
+    color: var(--secondary);
+}
+
+.main{
+    width: 100vw;
+    height: calc(100vh - 60px);
+}
+.main .container{
+    width: 500px;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    user-select: none;
+}
+.main .container h1{
+    font-size: 40px;
+    text-align: center;
+    color: var(--darkBg);
+    animation: fade-from-right 0.85s ease-out;
+}
+.main .container h1 span{
+    color: var(--secondary2);
+}
+.main .container h1 span span{
+    color: var(--secondary);
+}
+.main .container p{
+    font-size: 20px;
+    line-height: 25px;
+    color: var(--secondary);
+    animation: fade 2.5s;
+}
+.new-file{
+    width: 100vw;
+    height: 100vh;
+}
+.new-file header{
+    width: 100vw;
+    height: 100px;
+    color: var(--secondary2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.new-file input{
+    all: unset;
+    background-color: var(--darkBg);
+    width: 280px;
+    height: 40px;
+    padding: 0px 15px;
+    font-size: 18px;
+    color: var(--secondary2);
+    border: 2px solid var(--secondary2);
+    border-radius: 20px;
+}
+.new-file .note{
+    width: 100vw;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.new-file .note textarea{
+    all: unset;
+    width: 90%;
+    height: 80vh;
+    padding: 20px;
+    background-color: var(--darkBg);
+    color: var(--secondary);
+    border-radius: 20px;
+    font-size: 18px;
+    resize: none;
+}
+.new-file .note button{
+    all: unset;
+    width: 100px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    background-color: var(--secondary2);
+    color: var(--secondary);
+    font-size: 25px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.saved-file{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+.saved-file .saved-cards{
+    width: 85vw;
+    max-height: calc(100vh - 80px);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 20px;
+    user-select: none;
+    cursor: pointer;
+}
+.saved-file .saved-cards .card{
+    width: 150px;
+    height: 210px;
+    background-color: var(--darkBg);
+    border: 2px solid var(--secondary2);
+    border-radius: 30px;
+    color: var(--secondary);
+    box-shadow: 0px 0px 5px var(--darkBg) , 0px 0px 10px var(--darkBg) , 0px 0px 15px var(--darkBg) , 0px 0px 20px var(--darkBg);
+    overflow: visible;
+}
+.saved-file .saved-cards .card .preview{
+    width: 120px;
+    height: 140px;
+    padding: 15px;
+    overflow: hidden;
+}
+.saved-file .saved-cards .card .info{
+    width: 150px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--lightBG);
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+.saved-file .saved-cards .card .info .title{
+    margin-left: 10px;
+}
+.saved-file .saved-cards .card .info .delete-btn{
+    margin-right: 15px;
+    color: var(--secondary2);
+    width: 20px;
+}
+.saved-file .saved-cards .card .view{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: rgba(44, 41, 41, 0.068);
+    backdrop-filter: blur(20px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 170px;
+}
+.saved-file .saved-cards .card .view h1{
+    height: 70px;
+    font-size: 40px;
+    color: var(--secondary2);
+    background-color: var(--darkBg);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    cursor: default;
+    padding: 0px 15px;
+}
+.saved-file .saved-cards .card .view .savedNote{
+    all: unset;
+    width: 90%;
+    height: 60%;
+    padding: 20px;
+    background-color: var(--darkBg);
+    color: var(--secondary);
+    border-radius: 20px;
+    font-size: 18px;
+    resize: none;
+    cursor: default;
+    overflow-y: scroll;
+}
+.saved-file .saved-cards .card .view button{
+    all: unset;
+    font-size: 20px;
+    width: 80px;
+    height: 40px;
+    background-color: var(--darkBg);
+    color: var(--secondary2);
+    border: 2px solid var(--secondary2);
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+@media screen and (max-width : 500px) {
+    .main .container{
+        width: 300px;
+    }
+    .main .container h1{
+        font-size: 30px;
+    }
+    .main .container p{
+        font-size: 18px;
+    }
+    .new-file .note textarea{
+        width: 70%;
+    }
+    .saved-file .saved-cards .card .view{
+        margin-top: 240px;
+    }    
+    .saved-file .saved-cards .card .view .savedNote{
+        width: 70%;
+    }
+}
+@keyframes fade-from-right{
+    0%{
+        opacity: 0;
+        transform: translateX(200px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+@keyframes fade{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
